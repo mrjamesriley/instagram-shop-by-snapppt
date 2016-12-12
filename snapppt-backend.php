@@ -1,9 +1,10 @@
 <?php
 
+if(!defined( 'ABSPATH' )) exit; // Exit if accessed directly
+
 // add the 'Add Snapppt Embed' feed button to the editor
 function snapppt_embed_editor_button($context) {
   $button_logo = SNAPPPT_PLUGIN_URL . 'images/snapppt-logo-square-small.png';
-  $onclick_button = "tinyMCE.activeEditor.execCommand('openSnappptEmbedSelector')";
   $context .= '<a class="button" href="#" onclick="tinyMCE.activeEditor.execCommand(\'openSnappptEmbedSelector\')"; return false"><span class="wp-media-buttons-icon wdi_media_button_icon" style="vertical-align: text-bottom; background: url(' . $button_logo . ') no-repeat scroll left top rgba(0, 0, 0, 0);background-size:contain;"></span> Add Snapppt Embed</a>';
   return $context;
 }
@@ -15,6 +16,7 @@ function snapppt_settings_content() {
   include SNAPPPT_PLUGIN_PATH .'snapppt_settings_template.php';
 }
 
+
 function register_snapppt_tinymce_plugin() {
   function tinymce_snapppt_plugin($plugins) {
     $plugins['snappptEmbedSelector'] = plugins_url('tinymce/', __FILE__) . 'editor_plugin.js';
@@ -23,6 +25,7 @@ function register_snapppt_tinymce_plugin() {
   add_filter('mce_external_plugins', 'tinymce_snapppt_plugin');
 }
 add_filter('admin_init', 'register_snapppt_tinymce_plugin');
+
 
 function snapppt_settings_menu() {
  $menu_icon = SNAPPPT_PLUGIN_URL .'/images/snapppt-logo-square.png';
@@ -33,14 +36,19 @@ function snapppt_settings_menu() {
 add_action('admin_menu', 'snapppt_settings_menu');
 
 
-function style_snapppt_menu() {
-  echo '<style>
-    .toplevel_page_snapppt_settings .wp-menu-image img {
-      width: 20px;
-      height: 20px;
-    }
-  </style>';
+// have the CSS for the Snapppt settings page loaded in when suitable
+function snapppt_settings_styles($hook) {
+  if($hook != 'toplevel_page_snapppt_settings') { return; }
+  wp_enqueue_style('snapppt_settings_styles', plugins_url('assets/css/snapppt-settings-page.css', __FILE__));
 }
-add_action('admin_head', 'style_snapppt_menu')
+add_action('admin_enqueue_scripts', 'snapppt_settings_styles');
+
+
+// CSS to affect the Snapppt admin menu icon
+function snapppt_admin_styles($hook) {
+  wp_enqueue_style('snapppt_admin_styles', plugins_url('assets/css/snapppt-admin.css', __FILE__));
+}
+add_action('admin_enqueue_scripts', 'snapppt_admin_styles');
+
 
 ?>

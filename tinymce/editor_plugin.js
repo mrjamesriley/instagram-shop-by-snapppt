@@ -2,18 +2,22 @@
 
   tinymce.create('tinymce.plugins.snappptEmbedSelector', {
 
-    init : function(ed, url) {
-      // Register the command so that it can be invoked by using tinyMCE.activeEditor.execCommand('mceExample');
-      ed.addCommand('openSnappptEmbedSelector', function() {
-        ed.windowManager.open({
-          file : url + '/editor_plugin.php',
+    init : function(editor, url) {
+
+      editor.addCommand('openSnappptEmbedSelector', function() {
+        editor.windowManager.open({
+          file : url + '/editor_plugin.html',
           inline : 1,
           width : 450,
           height : 80
-        }, {
-          plugin_url : url, // Plugin absolute URL
+        },
+        {
+          plugin_url : url,
+          editor: editor,
+          jQuery: jQuery
         });
       });
+
     },
 
     getInfo : function() {

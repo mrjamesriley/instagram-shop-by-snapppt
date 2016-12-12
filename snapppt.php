@@ -1,4 +1,7 @@
 <?php
+
+if(!defined( 'ABSPATH' )) exit; // Exit if accessed directly
+
 /*
   Plugin Name: Instagram Shop by Snapppt
   Plugin URI: http://help.snapppt.com/woocommerce-and-wordpress/instagram-shop-plugin-for-wordpress-and-woocommerce-by-snapppt

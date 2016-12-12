@@ -1,5 +1,7 @@
 <?php
 
+if(!defined( 'ABSPATH' )) exit; // Exit if accessed directly
+
 function snapppt_shortcodes_init() {
   function snapppt_embed_func($atts) {
     global $snapppt_options;
