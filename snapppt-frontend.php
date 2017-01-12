@@ -23,4 +23,35 @@ function snapppt_shortcodes_init() {
 }
 add_action('init', 'snapppt_shortcodes_init');
 
+
+function insert_snapppt_conversion_code($order_id) {
+  global $snapppt_options;
+  $account_id = $snapppt_options['account_id'];
+  if(empty($account_id)) { return; }
+
+  $order = wc_get_order($order_id);
+  if(!$order) { return; }
+
+  $order_number    = $order-> get_order_number();
+  $order_total     = $order-> order_total;
+  $order_currency  = $order-> order_currency;
+  $conversion_url  = SNAPPPT_URL . '/conversion-tracker.js';
+
+$snapppt_conversion_code = <<<EOT
+  <!-- Snapppt conversion code -->
+  <script>
+    window.snapppt_order_number = '$order_number';
+    window.snapppt_order_total = '$order_total';
+    window.snapppt_order_currency = '$order_currency';
+    window.snapppt_account = '$account_id';
+    window.snapppt_platform = 'woocommerce';
+  </script>
+  <script src="$conversion_url"></script>
+EOT;
+
+  echo($snapppt_conversion_code);
+}
+
+add_action('woocommerce_thankyou', 'insert_snapppt_conversion_code');
+
 ?>

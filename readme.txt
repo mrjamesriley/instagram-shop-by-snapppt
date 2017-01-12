@@ -2,8 +2,8 @@
 Contributors: Snapppt
 Tags: instagram shop, shoppable instagram, social commerce, increase conversion, get more sales, increase sales, instagram marketing, instagram gallery, instagram feed embed, instagram live feed, sales conversions, analytics,  customer acquisition
 Requires at least: 2.8.0
-Tested up to: 4.7
-Stable tag: trunk
+Tested up to: 4.7.1
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,12 @@ Automatic updates should work as per normal. As with an update of any plugin, yo
 
 == Frequently Asked Questions ==
 
+= What does this plugin add to Wordpress/WooCommerce? =
+
+Wordpress - this plugin makes it easy for you to make use of your Snapppt shoppable embed on any page or blog post of your website. You’ll see a button added to the toolbar of the page editor, which when clicked, allows you to select the Snapppt Embed type (i.e Grid, Stacked or, Carousel) you would like, and then inserts the corresponding shortcode into the content.
+
+WooCommerce - if you are using the WooCommerce plugin for your store, this plugin will automatically insert the Snapppt Conversion code on the 'Thank you' page, displayed once an order has been placed. This allows you to track your customers’ conversion data on your Snapppt Analytics page, providing insight into your stores performance, and the impact of media used via Snapppt on your store’s success.
+
 = How do I get started? =
 
 We’ve put together a step-by-step [getting started guide](http://www.getsnapppt.com/getting-started-guide) to help answer the most commonly asked questions we get.
@@ -97,6 +103,12 @@ There’s also a handy [Help centre](http://help.snapppt.com). We are constantly
 
 
 == Changelog ==
+
+= 1.1.0 =
+
+Introduction of the Snapppt conversion code for WooCommerce!
+
+If you are using WooCommerce, this plugin will automatically insert your Snapppt conversion code for you - allowing you to track your customers’ conversion data on your Snapppt Analytics page, providing insight into your stores performance, and the impact of media used via Snapppt on your store’s success.
 
 = 1.0.0 =
 
