@@ -28,10 +28,19 @@ add_filter('admin_init', 'register_snapppt_tinymce_plugin');
 
 
 function snapppt_settings_menu() {
+ global $snapppt_options;
+ $account_id = $snapppt_options['account_id'];
+
  $menu_icon = SNAPPPT_PLUGIN_URL .'/images/snapppt-logo-square.png';
 
+ if(empty($account_id)) {
+   $menu_title = 'Snapppt <span class="update-plugins"><span class="update-count">setup</span></span>';
+ } else {
+   $menu_title = "Snapppt";
+ }
+
  // developer.wordpress.org/reference/functions/add_menu_page/
- add_menu_page('Snapppt', 'Snapppt', 'manage_options', 'snapppt_settings','snapppt_settings_content', $menu_icon);
+ add_menu_page('Snapppt', $menu_title, 'manage_options', 'snapppt_settings', 'snapppt_settings_content', $menu_icon);
 }
 add_action('admin_menu', 'snapppt_settings_menu');
 
