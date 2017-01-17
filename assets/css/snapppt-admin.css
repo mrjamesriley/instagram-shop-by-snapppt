@@ -2,3 +2,60 @@
   width: 20px;
   height: 20px;
 }
+
+.snapppt-notice {
+  height: 248px;
+  width: 100%;
+  max-width: 1062px;
+  background-image: url('../../images/snapppt-notice-background.png');
+  color: white;
+  padding-top: 130px;
+  padding-left: 32px;
+  box-sizing: border-box;
+  font-family: "Futura W01", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-left: none;
+  border-radius: 3px;
+}
+
+.snapppt-notice p {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+  text-shadow: 1px 2px 1px black;
+  font-size: 13px;
+}
+
+.snapppt-notice .snapppt-notice-second-line {
+  margin-bottom: 20px;
+  text-transform: none;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.snapppt-notice .snapppt-notice-link-line {
+  font-size: 14px;
+  color: black;
+}
+
+.snapppt-notice a {
+  color: white;
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 1px solid white;
+  margin-right: 20px;
+  font-size: 12px;
+}
+
+
+.snapppt-notice .notice-dismiss:before {
+  color: rgba(255, 255, 255, 0.29);
+}
+
+.snapppt-notice .notice-dismiss:hover:before {
+  color: white;
+}
+
+.snapppt-notice a:hover {
+  color: #ff7737;
+}

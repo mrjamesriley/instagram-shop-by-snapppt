@@ -38,12 +38,10 @@ $snapppt_options = get_option('snapppt');
 function snapppt_options() { register_setting('snapppt_options', 'snapppt'); }
 add_action('admin_init', 'snapppt_options');
 
-function snapppt_plugin_uninstall() { delete_option('snapppt'); }
-register_uninstall_hook(__FILE__, 'snapppt_plugin_uninstall');
-
 if(is_admin()) {
-  // handles the settings page, and the editor additions for Snapppt shortcode
+  // handles the settings page, the editor additions for Snapppt shortcode
   include SNAPPPT_PLUGIN_PATH . 'snapppt-backend.php';
+  include SNAPPPT_PLUGIN_PATH . 'snapppt-notice.php';
 }
 
 if(!is_admin()) {

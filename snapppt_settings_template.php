@@ -15,7 +15,7 @@
   <form method="POST" action="options.php">
     <?php settings_fields('snapppt_options'); ?>
 
-    <?php if($snapppt_options['account_id']) { ?>
+    <?php if(snapppt_is_setup()) { ?>
 
       <p class="snapppt_large_line">Your Snapppt Account ID</p>
 
@@ -28,7 +28,11 @@
 
     <?php } ?>
 
-    <input name="snapppt[account_id]" style="margin-bottom: 5px" placeholder="XXXXX-XXXX-XXXX-XXX-XXXXXXX" value="<?php echo esc_html($snapppt_options['account_id']); ?>" class="regular-text snapppt_input_field" />
+    <input name="snapppt[snapppt_notice_later]" type="hidden" value="<?php echo(strtotime("+1 day")); ?>">
+
+    <input name="snapppt[account_id]" style="margin-bottom: 5px" placeholder="XXXXX-XXXX-XXXX-XXX-XXXXXXX"
+      value="<?php echo snapppt_is_setup() ? esc_html($snapppt_options['account_id']) : ''; ?>" class="regular-text snapppt_input_field" />
+
     <br />
     <p style="margin-bottom: 20px" class="snapppt_small_line">You can find this in your Snapppt <a href="<?php echo SNAPPPT_URL ?>/account/edit" target="_blank">Account details</a> page</p>
 

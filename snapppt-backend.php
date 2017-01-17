@@ -27,19 +27,18 @@ function register_snapppt_tinymce_plugin() {
 add_filter('admin_init', 'register_snapppt_tinymce_plugin');
 
 
-function snapppt_settings_menu() {
+function snapppt_is_setup() {
  global $snapppt_options;
- $account_id = $snapppt_options['account_id'];
+ return isset($snapppt_options['account_id']) && strlen($snapppt_options['account_id']) > 5;
+}
 
+
+// add Snapppt to the left hand admin menu
+function snapppt_settings_menu() {
  $menu_icon = SNAPPPT_PLUGIN_URL .'/images/snapppt-logo-square.png';
+ $menu_title = "Snapppt";
 
- if(empty($account_id)) {
-   $menu_title = 'Snapppt <span class="update-plugins"><span class="update-count">setup</span></span>';
- } else {
-   $menu_title = "Snapppt";
- }
-
- // developer.wordpress.org/reference/functions/add_menu_page/
+ if(!snapppt_is_setup()) { $menu_title .= '<span class="update-plugins"><span class="update-count">Setup</span></span>'; }
  add_menu_page('Snapppt', $menu_title, 'manage_options', 'snapppt_settings', 'snapppt_settings_content', $menu_icon);
 }
 add_action('admin_menu', 'snapppt_settings_menu');
@@ -58,6 +57,5 @@ function snapppt_admin_styles($hook) {
   wp_enqueue_style('snapppt_admin_styles', plugins_url('assets/css/snapppt-admin.css', __FILE__));
 }
 add_action('admin_enqueue_scripts', 'snapppt_admin_styles');
-
 
 ?>
