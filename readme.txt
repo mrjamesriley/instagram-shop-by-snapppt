@@ -2,8 +2,8 @@
 Contributors: Snapppt
 Tags: instagram shop, shoppable instagram, social commerce, increase conversion, get more sales, increase sales, instagram marketing, instagram gallery, instagram feed embed, instagram live feed, sales conversions, analytics,  customer acquisition
 Requires at least: 2.8.0
-Tested up to: 4.7.1
-Stable tag: 1.1.2
+Tested up to: 4.7.5
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,6 +62,13 @@ Instagram shop pages:
 
 == Installation ==
 
+= Minimum requirements =
+
+Wordpress 2.8.0 (Wordpress 4 or greater is recommended)
+WooCommerce 2 (WooCommerce 3 or greater is recommended)
+
+= Automatic installation =
+
 Automatic installation is the easiest option as WordPress handles the file transfers itself and you don’t need to leave your web browser. To do an automatic install of Instagram Shop by Snapppt, log in to your WordPress dashboard, navigate to the Plugins menu and click Add New.
 
 In the search field type “Snapppt” and click Search Plugins. Once you've found our Instagram Shop plugin you can view details about it such as the point release, rating and description. Most importantly of course, you can install it by simply clicking “Install Now”.
@@ -103,6 +110,10 @@ There’s also a handy [Help centre](http://help.snapppt.com). We are constantly
 
 
 == Changelog ==
+
+= 1.1.3 =
+
+Better support for WooCommerce V3 (no more debug notices in Order confirmation page)
 
 = 1.1.2 =
 

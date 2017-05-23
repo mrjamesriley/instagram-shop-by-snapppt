@@ -7,7 +7,7 @@ if(!defined( 'ABSPATH' )) exit; // Exit if accessed directly
   Plugin URI: http://help.snapppt.com/woocommerce-and-wordpress/instagram-shop-plugin-for-wordpress-and-woocommerce-by-snapppt
   Description: Instagram Shop plugin by Snapppt is a free WP plugin that lets your customers shop your Instagram feed.
   Author: Snapppt
-  Version: 1.1.2
+  Version: 1.1.3
   Author URI: http://getsnapppt.com
   License: GPLv2
 */
